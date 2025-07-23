@@ -51,9 +51,9 @@
   },
   {
     "Id": 6,
-    "appName": "Finance Tracker",
+"appName": "Finance Tracker",
     "category": "Finance",
-"userEmail": "david.wilson@financeplus.co",
+    "userEmail": "david.wilson@financeplus.co",
     "plan": "Pro",
     "messagesCount": 756,
     "lastActivity": "2024-01-12T16:45:00Z",
@@ -107,9 +107,9 @@
     "plan": "Enterprise",
     "messagesCount": 823,
     "lastActivity": "2024-01-15T12:15:00Z",
-    "dbConnected": false
+"dbConnected": false
   },
-{
+  {
     "Id": 12,
     "appName": "Event Planner",
     "category": "Events",
@@ -134,9 +134,9 @@
     "appName": "Real Estate CRM",
     "category": "Real Estate",
     "userEmail": "michael.taylor@realtypro.real",
-    "plan": "Enterprise",
+"plan": "Enterprise",
     "messagesCount": 967,
-"lastActivity": "2024-01-14T13:05:00Z",
+    "lastActivity": "2024-01-14T13:05:00Z",
     "dbConnected": true
   },
   {
@@ -153,9 +153,9 @@
     "Id": 16,
     "appName": "Recipe Manager",
     "category": "Food",
-    "userEmail": "chef.antonio@culinaryapp.food",
+"userEmail": "chef.antonio@culinaryapp.food",
     "plan": "Pro",
-"messagesCount": 567,
+    "messagesCount": 567,
     "lastActivity": "2024-01-12T19:20:00Z",
     "dbConnected": true
   },
@@ -171,9 +171,9 @@
   },
   {
     "Id": 18,
-    "appName": "Code Repository",
+"appName": "Code Repository",
     "category": "Development",
-"userEmail": "dev.team@codebase.dev",
+    "userEmail": "dev.team@codebase.dev",
     "plan": "Enterprise",
     "messagesCount": 1345,
     "lastActivity": "2024-01-15T18:45:00Z",
@@ -189,9 +189,9 @@
     "lastActivity": "2024-01-11T07:25:00Z",
     "dbConnected": false
   },
-  {
+{
     "Id": 20,
-"appName": "Pet Care Assistant",
+    "appName": "Pet Care Assistant",
     "category": "Pets",
     "userEmail": "vet.clinic@petcare.animals",
     "plan": "Basic",
@@ -199,3 +199,4 @@
     "lastActivity": "2024-01-06T12:10:00Z",
     "dbConnected": true
   }
+]
