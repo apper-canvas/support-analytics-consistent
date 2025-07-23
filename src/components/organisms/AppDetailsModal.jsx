@@ -296,18 +296,7 @@ const getLastActivityColor = (lastActivity) => {
             
             {/* Sales Comments Section */}
             <SalesCommentsSection appId={app.Id} />
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="flex items-center justify-end space-x-3 p-6 border-t border-gray-200 bg-gray-50">
-            <Button variant="outline" onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="primary">
-              <ApperIcon name="MessageSquare" className="h-4 w-4 mr-2" />
-              View Messages
-            </Button>
+</div>
           </div>
         </motion.div>
       </div>

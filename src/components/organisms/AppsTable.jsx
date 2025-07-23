@@ -207,16 +207,6 @@ const getPlanBadgeVariant = (plan) => {
                         onRowClick && onRowClick(app);
                       }}
                     >
-                      <ApperIcon name="MessageCircle" className="h-4 w-4" />
-                    </Button>
-                    <Button 
-                      variant="ghost" 
-                      size="sm"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onRowClick && onRowClick(app);
-                      }}
-                    >
                       <ApperIcon name="MoreHorizontal" className="h-4 w-4" />
                     </Button>
                   </div>
