@@ -1,11 +1,10 @@
+import "@/index.css";
 import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import "@/index.css";
 import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
-
 const AppDetailsModal = ({ app, onClose }) => {
   // Handle escape key press
   useEffect(() => {
@@ -48,22 +47,21 @@ const AppDetailsModal = ({ app, onClose }) => {
     }
   };
 
-  const formatChatAnalysisStatus = (status) => {
+const formatChatAnalysisStatus = (status) => {
     return status.split('_').map(word => 
       word.charAt(0).toUpperCase() + word.slice(1)
     ).join(' ');
   };
 
-  const getActivityColor = (lastActivity) => {
-    const date = new Date(lastActivity);
-    const now = new Date();
-    const diffHours = (now - date) / (1000 * 60 * 60);
-    
-    if (diffHours < 1) return "text-green-600";
-    if (diffHours < 24) return "text-yellow-600";
-    return "text-red-600";
-  };
-
+const getLastActivityColor = (lastActivity) => {
+  const date = new Date(lastActivity);
+  const now = new Date();
+  const diffHours = (now - date) / (1000 * 60 * 60);
+  
+  if (diffHours < 1) return "text-green-600";
+  if (diffHours < 24) return "text-yellow-600";
+  return "text-red-600";
+};
   const formatDate = (dateString) => {
     return new Date(dateString).toLocaleDateString("en-US", {
       weekday: "long",
@@ -279,12 +277,11 @@ const AppDetailsModal = ({ app, onClose }) => {
                       <div className="p-3 bg-green-50 rounded-lg text-center">
                         <p className="text-sm font-medium text-green-900">This Month</p>
                         <p className="text-lg font-bold text-green-600">{Math.floor(app.messagesCount * 0.7)}</p>
-                      </div>
-                    </div>
+</div>
                     <div className="pt-3 border-t border-gray-200">
                       <div className="flex justify-between items-center text-sm">
                         <span className="text-gray-600">Last Activity:</span>
-                        <span className={cn("font-medium", getActivityColor(app.lastActivity))}>
+                        <span className={cn("font-medium", getLastActivityColor(app.lastActivity))}>
                           {formatDate(app.lastActivity)}
                         </span>
                       </div>
@@ -292,6 +289,7 @@ const AppDetailsModal = ({ app, onClose }) => {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
 
