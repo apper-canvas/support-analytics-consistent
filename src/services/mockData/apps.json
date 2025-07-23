@@ -1,137 +1,201 @@
 [
   {
     "Id": 1,
-    "appName": "ShopEasy Mobile",
-    "category": "E-commerce",
-    "userEmail": "john.smith@shopeasy.com", 
+    "appName": "TaskFlow Pro",
+    "category": "Productivity",
+    "userEmail": "sarah.johnson@techcorp.com",
     "plan": "Enterprise",
-    "messagesCount": 247,
-    "lastActivity": "2024-01-15T08:30:00Z"
+    "messagesCount": 1247,
+    "lastActivity": "2024-01-15T14:30:00Z",
+    "dbConnected": true
   },
   {
     "Id": 2,
-    "appName": "SocialConnect",
-    "category": "Social Media",
-    "userEmail": "sarah.johnson@socialconnect.io",
-    "plan": "Pro", 
-    "messagesCount": 89,
-    "lastActivity": "2024-01-15T10:15:00Z"
+    "appName": "Customer Insights",
+    "category": "Analytics",
+    "userEmail": "mike.chen@startupxyz.io",
+    "plan": "Pro",
+    "messagesCount": 892,
+    "lastActivity": "2024-01-15T11:45:00Z",
+    "dbConnected": false
   },
   {
     "Id": 3,
-    "appName": "TaskMaster Pro",
-    "category": "Productivity",
-    "userEmail": "mike.wilson@taskmaster.co",
-    "plan": "Basic",
-    "messagesCount": 156,
-    "lastActivity": "2024-01-14T16:45:00Z"
+    "appName": "E-Commerce Dashboard",
+    "category": "E-commerce",
+    "userEmail": "lisa.rodriguez@shopbest.com",
+    "plan": "Enterprise",
+    "messagesCount": 2156,
+    "lastActivity": "2024-01-15T16:20:00Z",
+    "dbConnected": true
   },
   {
     "Id": 4,
-    "appName": "FinanceTracker",
-    "category": "Finance",
-    "userEmail": "emma.davis@fintrack.com",
-    "plan": "Enterprise",
-    "messagesCount": 342,
-    "lastActivity": "2024-01-15T09:22:00Z"
+    "appName": "Social Media Manager",
+    "category": "Marketing",
+    "userEmail": "alex.turner@socialboost.net",
+    "plan": "Pro",
+    "messagesCount": 634,
+    "lastActivity": "2024-01-14T09:15:00Z",
+    "dbConnected": true
   },
   {
     "Id": 5,
-    "appName": "HealthMetrics",
-    "category": "Health",
-    "userEmail": "david.brown@healthmetrics.app",
-    "plan": "Pro",
-    "messagesCount": 78,
-    "lastActivity": "2024-01-15T07:18:00Z"
+    "appName": "HR Assistant",
+    "category": "HR",
+    "userEmail": "jennifer.kim@hrtech.org",
+    "plan": "Basic",
+    "messagesCount": 418,
+    "lastActivity": "2024-01-13T13:30:00Z",
+    "dbConnected": false
   },
   {
     "Id": 6,
-    "appName": "LearnHub",
-    "category": "Education",
-    "userEmail": "lisa.garcia@learnhub.edu",
-    "plan": "Basic",
-    "messagesCount": 194,
-    "lastActivity": "2024-01-14T14:33:00Z"
+    "appName": "Finance Tracker",
+    "category": "Finance",
+"userEmail": "david.wilson@financeplus.co",
+    "plan": "Pro",
+    "messagesCount": 756,
+    "lastActivity": "2024-01-12T16:45:00Z",
+    "dbConnected": true
   },
   {
     "Id": 7,
-    "appName": "QuickShop",
-    "category": "E-commerce",
-    "userEmail": "robert.martinez@quickshop.net",
-    "plan": "Free",
-    "messagesCount": 23,
-    "lastActivity": "2024-01-13T11:22:00Z"
+    "appName": "Learning Platform",
+    "category": "Education",
+    "userEmail": "maria.garcia@edutech.edu",
+    "plan": "Basic",
+    "messagesCount": 293,
+    "lastActivity": "2024-01-11T10:20:00Z",
+    "dbConnected": false
   },
   {
     "Id": 8,
-    "appName": "ChatConnect",
-    "category": "Social Media",
-    "userEmail": "jennifer.taylor@chatconnect.com",
-    "plan": "Pro",
-    "messagesCount": 167,
-    "lastActivity": "2024-01-15T12:08:00Z"
+    "appName": "Inventory Control",
+    "category": "Operations",
+    "userEmail": "robert.brown@logistics.biz",
+    "plan": "Enterprise",
+    "messagesCount": 1089,
+    "lastActivity": "2024-01-15T08:30:00Z",
+    "dbConnected": true
   },
   {
     "Id": 9,
-    "appName": "ProjectFlow",
-    "category": "Productivity",
-    "userEmail": "william.anderson@projectflow.io",
-    "plan": "Enterprise",
-    "messagesCount": 298,
-    "lastActivity": "2024-01-15T06:55:00Z"
+    "appName": "CRM Suite",
+    "category": "Sales",
+    "userEmail": "amanda.davis@salesforce.example",
+    "plan": "Pro",
+    "messagesCount": 1456,
+    "lastActivity": "2024-01-14T15:10:00Z",
+    "dbConnected": false
   },
   {
     "Id": 10,
-    "appName": "BudgetWise",
-    "category": "Finance",
-    "userEmail": "maria.rodriguez@budgetwise.app",
-    "plan": "Basic",
-    "messagesCount": 134,
-    "lastActivity": "2024-01-14T19:17:00Z"
+    "appName": "Content Creator",
+    "category": "Creative",
+    "userEmail": "jason.miller@creative.studio",
+    "plan": "Free",
+    "messagesCount": 167,
+    "lastActivity": "2024-01-10T14:25:00Z",
+    "dbConnected": true
   },
   {
     "Id": 11,
-    "appName": "FitnessPal",
-    "category": "Health",
-    "userEmail": "james.thomas@fitnesspal.com",
-    "plan": "Pro",
-    "messagesCount": 112,
-    "lastActivity": "2024-01-15T05:42:00Z"
+    "appName": "Health Monitor",
+    "category": "Healthcare",
+    "userEmail": "dr.patricia.lee@healthtech.med",
+    "plan": "Enterprise",
+    "messagesCount": 823,
+    "lastActivity": "2024-01-15T12:15:00Z",
+    "dbConnected": false
   },
-  {
+{
     "Id": 12,
-    "appName": "StudyBuddy",
-    "category": "Education", 
-    "userEmail": "amanda.jackson@studybuddy.org",
-    "plan": "Free",
-    "messagesCount": 67,
-    "lastActivity": "2024-01-14T13:29:00Z"
+    "appName": "Event Planner",
+    "category": "Events",
+    "userEmail": "carlos.martinez@eventpro.events",
+    "plan": "Pro",
+    "messagesCount": 445,
+    "lastActivity": "2024-01-13T17:40:00Z",
+    "dbConnected": true
   },
   {
     "Id": 13,
-    "appName": "RetailMax",
-    "category": "E-commerce",
-    "userEmail": "christopher.white@retailmax.biz",
-    "plan": "Enterprise",
-    "messagesCount": 421,
-    "lastActivity": "2024-01-15T11:35:00Z"
+    "appName": "Travel Organizer",
+    "category": "Travel",
+    "userEmail": "sophie.anderson@travelwise.travel",
+    "plan": "Basic",
+    "messagesCount": 312,
+    "lastActivity": "2024-01-09T11:50:00Z",
+    "dbConnected": false
   },
   {
     "Id": 14,
-    "appName": "MoodTracker",
-    "category": "Health",
-    "userEmail": "stephanie.harris@moodtracker.health",
-    "plan": "Basic",
-    "messagesCount": 89,
-    "lastActivity": "2024-01-14T20:14:00Z"
+    "appName": "Real Estate CRM",
+    "category": "Real Estate",
+    "userEmail": "michael.taylor@realtypro.real",
+    "plan": "Enterprise",
+    "messagesCount": 967,
+"lastActivity": "2024-01-14T13:05:00Z",
+    "dbConnected": true
   },
   {
     "Id": 15,
-    "appName": "CodeAcademy",
-    "category": "Education",
-    "userEmail": "daniel.clark@codeacademy.dev",
+    "appName": "Fitness Tracker",
+    "category": "Health",
+    "userEmail": "emma.white@fitnessapp.fit",
+    "plan": "Free",
+    "messagesCount": 198,
+    "lastActivity": "2024-01-08T09:30:00Z",
+    "dbConnected": false
+  },
+  {
+    "Id": 16,
+    "appName": "Recipe Manager",
+    "category": "Food",
+    "userEmail": "chef.antonio@culinaryapp.food",
     "plan": "Pro",
-    "messagesCount": 203,
-    "lastActivity": "2024-01-15T08:07:00Z"
+"messagesCount": 567,
+    "lastActivity": "2024-01-12T19:20:00Z",
+    "dbConnected": true
+  },
+  {
+    "Id": 17,
+    "appName": "Music Studio",
+    "category": "Entertainment",
+    "userEmail": "dj.sarah@musicapp.sound",
+    "plan": "Basic",
+    "messagesCount": 234,
+    "lastActivity": "2024-01-07T16:15:00Z",
+    "dbConnected": false
+  },
+  {
+    "Id": 18,
+    "appName": "Code Repository",
+    "category": "Development",
+"userEmail": "dev.team@codebase.dev",
+    "plan": "Enterprise",
+    "messagesCount": 1345,
+    "lastActivity": "2024-01-15T18:45:00Z",
+    "dbConnected": true
+  },
+  {
+    "Id": 19,
+    "appName": "Weather Station",
+    "category": "Weather",
+    "userEmail": "meteorologist@weatherapp.climate",
+    "plan": "Pro",
+    "messagesCount": 689,
+    "lastActivity": "2024-01-11T07:25:00Z",
+    "dbConnected": false
+  },
+  {
+    "Id": 20,
+"appName": "Pet Care Assistant",
+    "category": "Pets",
+    "userEmail": "vet.clinic@petcare.animals",
+    "plan": "Basic",
+    "messagesCount": 378,
+    "lastActivity": "2024-01-06T12:10:00Z",
+    "dbConnected": true
   }
-]

@@ -101,8 +101,9 @@ const AppsTable = ({ apps, loading }) => {
               <SortableHeader field="category">Category</SortableHeader>
               <SortableHeader field="userEmail">User Email</SortableHeader>
               <SortableHeader field="plan">Plan</SortableHeader>
-              <SortableHeader field="messagesCount">Messages</SortableHeader>
+<SortableHeader field="messagesCount">Messages</SortableHeader>
               <SortableHeader field="lastActivity">Last Activity</SortableHeader>
+              <SortableHeader field="dbConnected">DB Connected</SortableHeader>
               <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
                 Actions
               </th>
@@ -146,6 +147,21 @@ const AppsTable = ({ apps, loading }) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className={cn("text-sm font-medium", getActivityColor(app.lastActivity))}>
                     {formatDate(app.lastActivity)}
+</div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="flex items-center">
+                    {app.dbConnected ? (
+                      <div className="flex items-center">
+                        <ApperIcon name="Check" className="h-4 w-4 text-green-600 mr-2" />
+                        <span className="text-sm font-medium text-green-600">Connected</span>
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <ApperIcon name="X" className="h-4 w-4 text-red-600 mr-2" />
+                        <span className="text-sm font-medium text-red-600">Disconnected</span>
+                      </div>
+                    )}
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
