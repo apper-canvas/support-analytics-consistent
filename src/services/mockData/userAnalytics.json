@@ -1,23 +1,102 @@
 [
   {
     "Id": 1,
-    "userId": "user_001",
-    "dailyActiveUsers": [1250, 1340, 1280, 1450, 1520, 1380, 1290],
-    "avgSessionDuration": 24.5,
-    "topFeatures": ["Dashboard", "Reports", "Settings", "Messages", "Analytics"]
+    "userEmail": "sarah.johnson@techcorp.com",
+    "company": "TechCorp Solutions",
+    "planType": "Enterprise",
+    "totalApps": 12,
+    "creditsUsed": 2850,
+    "signupDate": "2023-01-15T10:30:00Z",
+    "lastActivity": "2024-01-20T14:22:00Z"
   },
   {
     "Id": 2,
-    "userId": "user_002", 
-    "dailyActiveUsers": [980, 1020, 1150, 1080, 1200, 1160, 1090],
-    "avgSessionDuration": 18.2,
-    "topFeatures": ["Profile", "Chat", "Notifications", "Search", "Export"]
+    "userEmail": "mike.chen@startupinc.io",
+    "company": "StartupInc",
+    "planType": "Pro",
+    "totalApps": 8,
+    "creditsUsed": 1420,
+    "signupDate": "2023-03-22T09:15:00Z",
+    "lastActivity": "2024-01-19T11:45:00Z"
   },
   {
     "Id": 3,
-    "userId": "user_003",
-    "dailyActiveUsers": [750, 820, 890, 760, 810, 850, 780],
-    "avgSessionDuration": 31.8,
-    "topFeatures": ["Analytics", "Data Export", "Custom Reports", "API Access", "Integrations"]
+    "userEmail": "emily.davis@designstudio.co",
+    "company": "Design Studio Co",
+    "planType": "Basic",
+    "totalApps": 3,
+    "creditsUsed": 560,
+    "signupDate": "2023-07-08T16:20:00Z",
+    "lastActivity": "2024-01-18T09:12:00Z"
+  },
+  {
+    "Id": 4,
+    "userEmail": "alex.rodriguez@globaltech.com",
+    "company": "GlobalTech Industries",
+    "planType": "Enterprise",
+    "totalApps": 18,
+    "creditsUsed": 4200,
+    "signupDate": "2022-11-30T13:45:00Z",
+    "lastActivity": "2024-01-20T16:08:00Z"
+  },
+  {
+    "Id": 5,
+    "userEmail": "lisa.wong@innovate.ai",
+    "company": "Innovate AI",
+    "planType": "Pro",
+    "totalApps": 6,
+    "creditsUsed": 980,
+    "signupDate": "2023-05-14T11:30:00Z",
+    "lastActivity": "2024-01-17T13:22:00Z"
+  },
+  {
+    "Id": 6,
+    "userEmail": "david.thompson@freelancer.com",
+    "company": "Thompson Consulting",
+    "planType": "Basic",
+    "totalApps": 2,
+    "creditsUsed": 240,
+    "signupDate": "2023-09-12T14:15:00Z",
+    "lastActivity": "2024-01-16T10:35:00Z"
+  },
+  {
+    "Id": 7,
+    "userEmail": "maria.garcia@healthcare.org",
+    "company": "Healthcare Solutions",
+    "planType": "Enterprise",
+    "totalApps": 15,
+    "creditsUsed": 3600,
+    "signupDate": "2023-02-28T08:20:00Z",
+    "lastActivity": "2024-01-20T12:18:00Z"
+  },
+  {
+    "Id": 8,
+    "userEmail": "james.park@ecommerce.shop",
+    "company": "E-Commerce Plus",
+    "planType": "Pro",
+    "totalApps": 9,
+    "creditsUsed": 1850,
+    "signupDate": "2023-06-05T15:40:00Z",
+    "lastActivity": "2024-01-19T17:45:00Z"
+  },
+  {
+    "Id": 9,
+    "userEmail": "anna.kowalski@finance.bank",
+    "company": "Finance Bank Ltd",
+    "planType": "Enterprise",
+    "totalApps": 22,
+    "creditsUsed": 5100,
+    "signupDate": "2022-12-18T12:00:00Z",
+    "lastActivity": "2024-01-20T15:30:00Z"
+  },
+  {
+    "Id": 10,
+    "userEmail": "robert.kim@marketing.agency",
+    "company": "Marketing Pro Agency",
+    "planType": "Basic",
+    "totalApps": 4,
+    "creditsUsed": 720,
+    "signupDate": "2023-08-20T10:25:00Z",
+    "lastActivity": "2024-01-15T14:12:00Z"
   }
 ]
