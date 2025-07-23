@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import StatsCards from "@/components/organisms/StatsCards";
 import TableFilters from "@/components/organisms/TableFilters";
 import AppsTable from "@/components/organisms/AppsTable";
+import AppDetailsModal from "@/components/organisms/AppDetailsModal";
 import Loading from "@/components/ui/Loading";
 import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
@@ -17,6 +18,7 @@ const AppsOverview = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [planFilter, setPlanFilter] = useState("");
+  const [selectedApp, setSelectedApp] = useState(null);
 
   const filteredApps = useMemo(() => {
     return apps.filter(app => {
@@ -95,8 +97,12 @@ const AppsOverview = () => {
           actionLabel="Clear Filters"
           icon="Filter"
         />
-      ) : (
-        <AppsTable apps={filteredApps} loading={appsLoading} />
+) : (
+        <AppsTable apps={filteredApps} loading={appsLoading} onRowClick={setSelectedApp} />
+      )}
+
+      {selectedApp && (
+        <AppDetailsModal app={selectedApp} onClose={() => setSelectedApp(null)} />
       )}
     </motion.div>
   );

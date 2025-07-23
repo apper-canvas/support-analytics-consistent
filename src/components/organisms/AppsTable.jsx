@@ -5,10 +5,9 @@ import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
 import { cn } from "@/utils/cn";
 
-const AppsTable = ({ apps, loading }) => {
+const AppsTable = ({ apps, loading, onRowClick }) => {
   const [sortField, setSortField] = useState("appName");
   const [sortDirection, setSortDirection] = useState("asc");
-
   const handleSort = (field) => {
     if (sortField === field) {
       setSortDirection(sortDirection === "asc" ? "desc" : "asc");
@@ -128,13 +127,14 @@ const getPlanBadgeVariant = (plan) => {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {sortedApps.map((app, index) => (
+{sortedApps.map((app, index) => (
               <motion.tr
                 key={app.Id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.05 }}
-                className="hover:bg-gray-50 transition-colors duration-150"
+                className="hover:bg-gray-50 transition-colors duration-150 cursor-pointer"
+                onClick={() => onRowClick && onRowClick(app)}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
@@ -187,15 +187,36 @@ const getPlanBadgeVariant = (plan) => {
                     )}
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+<td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center space-x-2">
-                    <Button variant="ghost" size="sm">
+                    <Button 
+                      variant="ghost" 
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRowClick && onRowClick(app);
+                      }}
+                    >
                       <ApperIcon name="Eye" className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="sm">
+                    <Button 
+                      variant="ghost" 
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRowClick && onRowClick(app);
+                      }}
+                    >
                       <ApperIcon name="MessageCircle" className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="sm">
+                    <Button 
+                      variant="ghost" 
+                      size="sm"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onRowClick && onRowClick(app);
+                      }}
+                    >
                       <ApperIcon name="MoreHorizontal" className="h-4 w-4" />
                     </Button>
                   </div>
