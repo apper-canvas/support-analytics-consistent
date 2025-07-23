@@ -1,10 +1,13 @@
 import "@/index.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { toast } from 'react-toastify';
 import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
+import Input from "@/components/atoms/Input";
+import salesCommentsService from "@/services/api/salesCommentsService";
 const AppDetailsModal = ({ app, onClose }) => {
   // Handle escape key press
   useEffect(() => {
@@ -287,9 +290,12 @@ const getLastActivityColor = (lastActivity) => {
                       </div>
                     </div>
                   </div>
-                </div>
+</div>
               </div>
             </div>
+            
+            {/* Sales Comments Section */}
+            <SalesCommentsSection appId={app.Id} />
             </div>
           </div>
 
@@ -306,6 +312,294 @@ const getLastActivityColor = (lastActivity) => {
         </motion.div>
       </div>
     </AnimatePresence>
+  );
+};
+
+// Sales Comments Section Component
+const SalesCommentsSection = ({ appId }) => {
+  const [comments, setComments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [editingComment, setEditingComment] = useState(null);
+  const [formData, setFormData] = useState({
+    comment: '',
+    author: '',
+    priority: 'medium',
+    followUpDate: ''
+  });
+
+  // Load comments on mount
+  useEffect(() => {
+    loadComments();
+  }, [appId]);
+
+  const loadComments = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await salesCommentsService.getAll(appId);
+      setComments(data);
+    } catch (err) {
+      setError(err.message);
+      toast.error('Failed to load sales comments');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.comment.trim() || !formData.author.trim()) {
+      toast.warning('Please fill in all required fields');
+      return;
+    }
+
+    try {
+      setLoading(true);
+      const commentData = {
+        ...formData,
+        appId: appId
+      };
+
+      if (editingComment) {
+        await salesCommentsService.update(editingComment.Id, commentData);
+        toast.success('Sales comment updated successfully');
+      } else {
+        await salesCommentsService.create(commentData);
+        toast.success('Sales comment added successfully');
+      }
+
+      await loadComments();
+      resetForm();
+    } catch (err) {
+      toast.error(editingComment ? 'Failed to update comment' : 'Failed to add comment');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleEdit = (comment) => {
+    setEditingComment(comment);
+    setFormData({
+      comment: comment.comment,
+      author: comment.author,
+      priority: comment.priority,
+      followUpDate: comment.followUpDate || ''
+    });
+    setShowAddForm(true);
+  };
+
+  const handleDelete = async (commentId) => {
+    if (!confirm('Are you sure you want to delete this sales comment?')) {
+      return;
+    }
+
+    try {
+      setLoading(true);
+      await salesCommentsService.delete(commentId);
+      toast.success('Sales comment deleted successfully');
+      await loadComments();
+    } catch (err) {
+      toast.error('Failed to delete comment');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const resetForm = () => {
+    setFormData({
+      comment: '',
+      author: '',
+      priority: 'medium',
+      followUpDate: ''
+    });
+    setShowAddForm(false);
+    setEditingComment(null);
+  };
+
+  const getPriorityVariant = (priority) => {
+    switch (priority) {
+      case 'high': return 'error';
+      case 'medium': return 'warning';
+      case 'low': return 'success';
+      default: return 'default';
+    }
+  };
+
+  const formatDate = (dateString) => {
+    return new Date(dateString).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  };
+
+  if (loading && comments.length === 0) {
+    return (
+      <div className="premium-card p-6 rounded-lg mt-6">
+        <div className="flex items-center justify-center py-8">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="premium-card p-6 rounded-lg mt-6">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-semibold text-gray-900 flex items-center">
+          <ApperIcon name="MessageSquare" className="h-5 w-5 mr-2 text-primary-500" />
+          Sales Comments
+        </h3>
+        <Button
+          variant="primary"
+          size="sm"
+          onClick={() => setShowAddForm(!showAddForm)}
+          disabled={loading}
+        >
+          <ApperIcon name={showAddForm ? "X" : "Plus"} className="h-4 w-4 mr-2" />
+          {showAddForm ? 'Cancel' : 'Add Comment'}
+        </Button>
+      </div>
+
+      {/* Add/Edit Form */}
+      {showAddForm && (
+        <form onSubmit={handleSubmit} className="mb-6 p-4 bg-gray-50 rounded-lg space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Author *
+              </label>
+              <Input
+                type="text"
+                value={formData.author}
+                onChange={(e) => setFormData(prev => ({ ...prev, author: e.target.value }))}
+                placeholder="Enter author name"
+                required
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Priority
+              </label>
+              <select
+                value={formData.priority}
+                onChange={(e) => setFormData(prev => ({ ...prev, priority: e.target.value }))}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+              >
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Comment *
+            </label>
+            <textarea
+              value={formData.comment}
+              onChange={(e) => setFormData(prev => ({ ...prev, comment: e.target.value }))}
+              placeholder="Enter sales comment"
+              rows={3}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
+              required
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Follow-up Date
+            </label>
+            <Input
+              type="date"
+              value={formData.followUpDate}
+              onChange={(e) => setFormData(prev => ({ ...prev, followUpDate: e.target.value }))}
+            />
+          </div>
+
+          <div className="flex items-center space-x-3">
+            <Button type="submit" variant="primary" disabled={loading}>
+              <ApperIcon name="Save" className="h-4 w-4 mr-2" />
+              {editingComment ? 'Update Comment' : 'Add Comment'}
+            </Button>
+            <Button type="button" variant="outline" onClick={resetForm}>
+              Cancel
+            </Button>
+          </div>
+        </form>
+      )}
+
+      {/* Comments List */}
+      {error && (
+        <div className="text-center py-8">
+          <ApperIcon name="AlertCircle" className="h-12 w-12 text-red-500 mx-auto mb-4" />
+          <p className="text-red-600 mb-4">{error}</p>
+          <Button variant="outline" onClick={loadComments}>
+            <ApperIcon name="RefreshCw" className="h-4 w-4 mr-2" />
+            Retry
+          </Button>
+        </div>
+      )}
+
+      {!error && comments.length === 0 && !loading && (
+        <div className="text-center py-8">
+          <ApperIcon name="MessageSquare" className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+          <p className="text-gray-500 mb-2">No sales comments yet</p>
+          <p className="text-sm text-gray-400">Add the first comment to get started</p>
+        </div>
+      )}
+
+      {!error && comments.length > 0 && (
+        <div className="space-y-4">
+          {comments.map((comment) => (
+            <div key={comment.Id} className="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 transition-colors">
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex items-center space-x-3">
+                  <Badge variant={getPriorityVariant(comment.priority)}>
+                    {comment.priority.toUpperCase()}
+                  </Badge>
+                  <span className="text-sm font-medium text-gray-900">{comment.author}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => handleEdit(comment)}
+                    disabled={loading}
+                  >
+                    <ApperIcon name="Edit2" className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => handleDelete(comment.Id)}
+                    disabled={loading}
+                    className="text-red-600 hover:text-red-700"
+                  >
+                    <ApperIcon name="Trash2" className="h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+              
+              <p className="text-gray-700 mb-3 leading-relaxed">{comment.comment}</p>
+              
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>Created: {formatDate(comment.createdAt)}</span>
+                {comment.followUpDate && (
+                  <span className="flex items-center">
+                    <ApperIcon name="Calendar" className="h-3 w-3 mr-1" />
+                    Follow-up: {formatDate(comment.followUpDate)}
+                  </span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
   );
 };
 

@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "appId": 1,
+    "comment": "User expressed strong interest in enterprise features. Good potential for upgrade.",
+    "author": "Sarah Johnson",
+    "priority": "high",
+    "followUpDate": "2024-02-15",
+    "createdAt": "2024-02-01T10:30:00.000Z",
+    "updatedAt": "2024-02-01T10:30:00.000Z"
+  },
+  {
+    "Id": 2,
+    "appId": 1,
+    "comment": "Needs more customization options. Consider add-on packages.",
+    "author": "Mike Chen",
+    "priority": "medium",
+    "followUpDate": "2024-02-20",
+    "createdAt": "2024-02-03T14:15:00.000Z",
+    "updatedAt": "2024-02-03T14:15:00.000Z"
+  },
+  {
+    "Id": 3,
+    "appId": 2,
+    "comment": "Happy with current plan but interested in analytics features.",
+    "author": "Lisa Rodriguez",
+    "priority": "low",
+    "followUpDate": "2024-02-25",
+    "createdAt": "2024-02-05T09:45:00.000Z",
+    "updatedAt": "2024-02-05T09:45:00.000Z"
+  },
+  {
+    "Id": 4,
+    "appId": 3,
+    "comment": "Frequent support requests. May need training or plan downgrade.",
+    "author": "David Kim",
+    "priority": "high",
+    "followUpDate": "2024-02-12",
+    "createdAt": "2024-02-07T16:20:00.000Z",
+    "updatedAt": "2024-02-07T16:20:00.000Z"
+  }
+]
