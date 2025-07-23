@@ -1,0 +1,137 @@
+[
+  {
+    "Id": 1,
+    "appName": "ShopEasy Mobile",
+    "category": "E-commerce",
+    "userEmail": "john.smith@shopeasy.com", 
+    "plan": "Enterprise",
+    "messagesCount": 247,
+    "lastActivity": "2024-01-15T08:30:00Z"
+  },
+  {
+    "Id": 2,
+    "appName": "SocialConnect",
+    "category": "Social Media",
+    "userEmail": "sarah.johnson@socialconnect.io",
+    "plan": "Pro", 
+    "messagesCount": 89,
+    "lastActivity": "2024-01-15T10:15:00Z"
+  },
+  {
+    "Id": 3,
+    "appName": "TaskMaster Pro",
+    "category": "Productivity",
+    "userEmail": "mike.wilson@taskmaster.co",
+    "plan": "Basic",
+    "messagesCount": 156,
+    "lastActivity": "2024-01-14T16:45:00Z"
+  },
+  {
+    "Id": 4,
+    "appName": "FinanceTracker",
+    "category": "Finance",
+    "userEmail": "emma.davis@fintrack.com",
+    "plan": "Enterprise",
+    "messagesCount": 342,
+    "lastActivity": "2024-01-15T09:22:00Z"
+  },
+  {
+    "Id": 5,
+    "appName": "HealthMetrics",
+    "category": "Health",
+    "userEmail": "david.brown@healthmetrics.app",
+    "plan": "Pro",
+    "messagesCount": 78,
+    "lastActivity": "2024-01-15T07:18:00Z"
+  },
+  {
+    "Id": 6,
+    "appName": "LearnHub",
+    "category": "Education",
+    "userEmail": "lisa.garcia@learnhub.edu",
+    "plan": "Basic",
+    "messagesCount": 194,
+    "lastActivity": "2024-01-14T14:33:00Z"
+  },
+  {
+    "Id": 7,
+    "appName": "QuickShop",
+    "category": "E-commerce",
+    "userEmail": "robert.martinez@quickshop.net",
+    "plan": "Free",
+    "messagesCount": 23,
+    "lastActivity": "2024-01-13T11:22:00Z"
+  },
+  {
+    "Id": 8,
+    "appName": "ChatConnect",
+    "category": "Social Media",
+    "userEmail": "jennifer.taylor@chatconnect.com",
+    "plan": "Pro",
+    "messagesCount": 167,
+    "lastActivity": "2024-01-15T12:08:00Z"
+  },
+  {
+    "Id": 9,
+    "appName": "ProjectFlow",
+    "category": "Productivity",
+    "userEmail": "william.anderson@projectflow.io",
+    "plan": "Enterprise",
+    "messagesCount": 298,
+    "lastActivity": "2024-01-15T06:55:00Z"
+  },
+  {
+    "Id": 10,
+    "appName": "BudgetWise",
+    "category": "Finance",
+    "userEmail": "maria.rodriguez@budgetwise.app",
+    "plan": "Basic",
+    "messagesCount": 134,
+    "lastActivity": "2024-01-14T19:17:00Z"
+  },
+  {
+    "Id": 11,
+    "appName": "FitnessPal",
+    "category": "Health",
+    "userEmail": "james.thomas@fitnesspal.com",
+    "plan": "Pro",
+    "messagesCount": 112,
+    "lastActivity": "2024-01-15T05:42:00Z"
+  },
+  {
+    "Id": 12,
+    "appName": "StudyBuddy",
+    "category": "Education", 
+    "userEmail": "amanda.jackson@studybuddy.org",
+    "plan": "Free",
+    "messagesCount": 67,
+    "lastActivity": "2024-01-14T13:29:00Z"
+  },
+  {
+    "Id": 13,
+    "appName": "RetailMax",
+    "category": "E-commerce",
+    "userEmail": "christopher.white@retailmax.biz",
+    "plan": "Enterprise",
+    "messagesCount": 421,
+    "lastActivity": "2024-01-15T11:35:00Z"
+  },
+  {
+    "Id": 14,
+    "appName": "MoodTracker",
+    "category": "Health",
+    "userEmail": "stephanie.harris@moodtracker.health",
+    "plan": "Basic",
+    "messagesCount": 89,
+    "lastActivity": "2024-01-14T20:14:00Z"
+  },
+  {
+    "Id": 15,
+    "appName": "CodeAcademy",
+    "category": "Education",
+    "userEmail": "daniel.clark@codeacademy.dev",
+    "plan": "Pro",
+    "messagesCount": 203,
+    "lastActivity": "2024-01-15T08:07:00Z"
+  }
+]

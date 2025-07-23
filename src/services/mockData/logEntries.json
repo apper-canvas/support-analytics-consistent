@@ -1,0 +1,59 @@
+[
+  {
+    "Id": 1,
+    "timestamp": "2024-01-15T10:30:15Z",
+    "level": "ERROR",
+    "message": "Database connection timeout occurred",
+    "metadata": {
+      "service": "user-service",
+      "endpoint": "/api/users",
+      "duration": "5000ms",
+      "errorCode": "DB_TIMEOUT"
+    }
+  },
+  {
+    "Id": 2,
+    "timestamp": "2024-01-15T10:25:42Z",
+    "level": "WARN",
+    "message": "High memory usage detected",
+    "metadata": {
+      "service": "analytics-service",
+      "memoryUsage": "85%",
+      "threshold": "80%"
+    }
+  },
+  {
+    "Id": 3,
+    "timestamp": "2024-01-15T10:20:33Z",
+    "level": "INFO",
+    "message": "User authentication successful",
+    "metadata": {
+      "userId": "user_12345",
+      "loginMethod": "oauth",
+      "ipAddress": "192.168.1.100"
+    }
+  },
+  {
+    "Id": 4,
+    "timestamp": "2024-01-15T10:15:18Z",
+    "level": "ERROR",
+    "message": "API rate limit exceeded",
+    "metadata": {
+      "clientId": "app_789",
+      "endpoint": "/api/data",
+      "requestCount": 1001,
+      "limit": 1000
+    }
+  },
+  {
+    "Id": 5,
+    "timestamp": "2024-01-15T10:10:55Z",
+    "level": "DEBUG",
+    "message": "Cache miss for user preferences",
+    "metadata": {
+      "userId": "user_67890",
+      "cacheKey": "prefs_user_67890",
+      "fallbackUsed": true
+    }
+  }
+]

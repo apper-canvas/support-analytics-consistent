@@ -1,0 +1,23 @@
+[
+  {
+    "Id": 1,
+    "userId": "user_001",
+    "dailyActiveUsers": [1250, 1340, 1280, 1450, 1520, 1380, 1290],
+    "avgSessionDuration": 24.5,
+    "topFeatures": ["Dashboard", "Reports", "Settings", "Messages", "Analytics"]
+  },
+  {
+    "Id": 2,
+    "userId": "user_002", 
+    "dailyActiveUsers": [980, 1020, 1150, 1080, 1200, 1160, 1090],
+    "avgSessionDuration": 18.2,
+    "topFeatures": ["Profile", "Chat", "Notifications", "Search", "Export"]
+  },
+  {
+    "Id": 3,
+    "userId": "user_003",
+    "dailyActiveUsers": [750, 820, 890, 760, 810, 850, 780],
+    "avgSessionDuration": 31.8,
+    "topFeatures": ["Analytics", "Data Export", "Custom Reports", "API Access", "Integrations"]
+  }
+]
