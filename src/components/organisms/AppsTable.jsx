@@ -31,7 +31,7 @@ const AppsTable = ({ apps, loading }) => {
     return sortDirection === "asc" ? aValue - bValue : bValue - aValue;
   });
 
-  const getPlanBadgeVariant = (plan) => {
+const getPlanBadgeVariant = (plan) => {
     switch (plan.toLowerCase()) {
       case "enterprise": return "primary";
       case "pro": return "success";
@@ -39,6 +39,23 @@ const AppsTable = ({ apps, loading }) => {
       case "free": return "default";
       default: return "default";
     }
+  };
+
+  const getChatAnalysisStatusVariant = (status) => {
+    switch (status) {
+      case "smooth_progress": return "success";
+      case "needs_guidance": return "info";
+      case "frustrated": return "warning";
+      case "stuck": return "warning";
+      case "abandonment_risk": return "error";
+      default: return "default";
+    }
+  };
+
+  const formatChatAnalysisStatus = (status) => {
+    return status.split('_').map(word => 
+      word.charAt(0).toUpperCase() + word.slice(1)
+    ).join(' ');
   };
 
   const getActivityColor = (lastActivity) => {
@@ -97,11 +114,12 @@ const AppsTable = ({ apps, loading }) => {
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              <SortableHeader field="appName">App Name</SortableHeader>
+<SortableHeader field="appName">App Name</SortableHeader>
               <SortableHeader field="category">Category</SortableHeader>
               <SortableHeader field="userEmail">User Email</SortableHeader>
               <SortableHeader field="plan">Plan</SortableHeader>
-<SortableHeader field="messagesCount">Messages</SortableHeader>
+              <SortableHeader field="messagesCount">Messages</SortableHeader>
+              <SortableHeader field="chatAnalysisStatus">Chat Analysis Status</SortableHeader>
               <SortableHeader field="lastActivity">Last Activity</SortableHeader>
               <SortableHeader field="dbConnected">DB Connected</SortableHeader>
               <th className="px-6 py-4 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
@@ -138,16 +156,21 @@ const AppsTable = ({ apps, loading }) => {
                 <td className="px-6 py-4 whitespace-nowrap">
                   <Badge variant={getPlanBadgeVariant(app.plan)}>{app.plan}</Badge>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+<td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <ApperIcon name="MessageSquare" className="h-4 w-4 text-gray-400 mr-2" />
                     <span className="text-sm font-medium text-gray-900">{app.messagesCount}</span>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
+                  <Badge variant={getChatAnalysisStatusVariant(app.chatAnalysisStatus)}>
+                    {formatChatAnalysisStatus(app.chatAnalysisStatus)}
+                  </Badge>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
                   <div className={cn("text-sm font-medium", getActivityColor(app.lastActivity))}>
                     {formatDate(app.lastActivity)}
-</div>
+                  </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
